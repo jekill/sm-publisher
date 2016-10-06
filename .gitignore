@@ -1,0 +1,6 @@
+bin/test.php
+config/config.php
+.idea
+tests/_output/*
+vendor/
+locker.serialize

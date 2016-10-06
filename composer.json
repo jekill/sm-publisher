@@ -1,0 +1,31 @@
+{
+    "name": "jeka/sm-publisher",
+    "description": "An automation tool for posting to social services",
+    "license": "MIT",
+
+    "authors": [
+        {
+            "name": "Evgeny Fomin",
+            "email": "info@jeka.ru"
+        }
+    ],
+
+    "require": {
+        "php": ">=5.4",
+        "guzzlehttp/guzzle": "*@stable",
+        "facebook/php-sdk-v4": "*@stable",
+        "getjump/vk": "0.2.0",
+        "symfony/console": "2.5.*@stable",
+        "html2text/html2text": "2.*@stable"
+    },
+
+    "require-dev": {
+        "guzzlehttp/log-subscriber": "~1.0",
+        "codeception/codeception": "*"
+    },
+
+    "autoload": {
+        "psr-0": {"": "src/"}
+    }
+
+}
