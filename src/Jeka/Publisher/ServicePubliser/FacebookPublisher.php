@@ -42,36 +42,6 @@ class FacebookPublisher extends AbstractPublisher
 
         if (count($post->getImages()) > 0) {
             $params['picture'] = $post->getImages()[0];
-//            $params['link']['picture'] = $post->getImages()[0];
-//            var_dump($post->getImages()[0]);
-//            $previewImage = '';
-//            $response = $this->createRequest(
-//                'POST',
-//                "/{$this->facebookPageId}/albums",
-//                [
-//                    'name'    => $post->getId(),
-//                    'message' => $this->stripMessageText($post->getMessage())
-//                ]
-//            )->execute()->getResponse();
-//            $albumId  = $response->id;
-//
-//            foreach ($post->getImages() as $imageUrl) {
-//                $uploadReq = $this->createRequest(
-//                    "POST",
-//                    "/$albumId/photos",
-////                    "/{$this->facebookPageId}/photos",
-//                    [
-//                        'url' => $imageUrl,
-//                    ]
-//                );
-//                $response  = $uploadReq->execute()->getResponse();
-//                if (!$previewImage) {
-//                    $previewImage = $response->id;
-//                }
-//            }
-//            if ($previewImage) {
-//                $params['object_attachment'] = $previewImage;
-//            }
         }
 
         if ($post->getUrl()) {
@@ -79,9 +49,7 @@ class FacebookPublisher extends AbstractPublisher
         }
 
         try {
-//            var_dump($params);
-            $postRequest = $this->createRequest('POST', '/' . $this->facebookPageId . '/feed', $params);
-            $response    = $postRequest->execute()->getResponse();
+            $this->doFacebookRequest($params);
             $this->markAsPublished($post);
 
             return true;
@@ -104,5 +72,15 @@ class FacebookPublisher extends AbstractPublisher
         $request = new FacebookRequest($this->facebookSession, $method, $path, $parameters);
 
         return $request;
+    }
+
+    /**
+     * @param $params
+     */
+    public function doFacebookRequest($params)
+    {
+        $postRequest = $this->createRequest('POST', '/' . $this->facebookPageId . '/feed', $params);
+        $response    = $postRequest->execute()->getResponse();
+        return $response;
     }
 }
