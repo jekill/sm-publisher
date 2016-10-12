@@ -13,7 +13,7 @@
     "require": {
         "php": ">=5.4",
         "guzzlehttp/guzzle": "*@stable",
-        "facebook/php-sdk-v4": "*@stable",
+        "facebook/php-sdk-v4": "4.0.*",
         "getjump/vk": "0.2.0",
         "symfony/console": "2.5.*@stable",
         "html2text/html2text": "2.*@stable",
