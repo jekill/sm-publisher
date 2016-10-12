@@ -16,7 +16,8 @@
         "facebook/php-sdk-v4": "*@stable",
         "getjump/vk": "0.2.0",
         "symfony/console": "2.5.*@stable",
-        "html2text/html2text": "2.*@stable"
+        "html2text/html2text": "2.*@stable",
+        "zendframework/zend-feed": "^2.7"
     },
 
     "require-dev": {
