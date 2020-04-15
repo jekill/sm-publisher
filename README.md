@@ -4,6 +4,9 @@ A tool that helps to publish posts to different social networks (Facebook, VK.co
 
 It gets information from a single resource (e.g. an RSS feed) and publishes it to one or more social networks
 
+This tool is written in PHP, you need installed PHP and Composer (https://getcomposer.org/) 
+By the way, you can use Docker, follow the instructions below. 
+
 ## Installation
 
 ```bash
@@ -11,8 +14,6 @@ git clone git@github.com:jekill/sm-publisher.git
 cd sm-publisher
 composer install
 ```
-
-By the way, you can use Docker. Follow the instructions below. 
 
 ## Usage:
 
