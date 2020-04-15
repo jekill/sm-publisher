@@ -2,6 +2,8 @@
 
 A tool that helps to publish posts to different social networks (Facebook, VK.com)
 
+It gets information from a single resource (e.g. a RSS feed) and publishes it to one or more social networks
+
 
 ## Usage:
 
