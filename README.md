@@ -2,8 +2,17 @@
 
 A tool that helps to publish posts to different social networks (Facebook, VK.com)
 
-It gets information from a single resource (e.g. a RSS feed) and publishes it to one or more social networks
+It gets information from a single resource (e.g. an RSS feed) and publishes it to one or more social networks
 
+## Installation
+
+```bash
+git clone git@github.com:jekill/sm-publisher.git
+cd sm-publisher
+composer install
+```
+
+By the way, you can use Docker. Follow the instructions below. 
 
 ## Usage:
 
@@ -31,5 +40,20 @@ return [
 
 ### Publish
 ```bash
-php ./bin/publisher.php publish Rss http://feeds.feedburner.com/symfony/blog
+php ./bin/publisher.php publish Rss https://your-site.com/rss-feed.xml
+```
+
+## Using docker 
+
+### Build a docker image
+```bash
+docker build -t sm-publisher .
+```
+### Install dependencies
+```bash
+docker run -it --volume $PWD:/app sm-publisher /composer/composer install
+```
+### Using
+```bash
+docker run -it --volume $PWD:/app sm-publisher php ./bin/publisher.php publish Rss https://your-site.com/rss-feed.xml
 ```
